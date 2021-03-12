@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: servidor-zuul
+server:
+  port: 7000
+zuul:
+  routes:
+      serv-greet: # Service to create as sample
+        path: /sgreets/** #path that will be intercepted
+        serviceId: servicio-greet
+      
+eureka:                  
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
